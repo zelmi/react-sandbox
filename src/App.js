@@ -6,8 +6,11 @@ import ContactCard from "./components/ContactCard";
 import Joke from "./components/Joke";
 import jokesData from "./data/jokesData";
 import ClickEvents from "./components/ClickEvents";
-import Misc from "./components/Misc";
+import Things from "./components/Things";
 import NonUI from "./components/NonUI";
+import Counter from "./components/Counter";
+import GoingOut from "./components/GoingOut";
+import PersonCard from "./components/PersonCard";
 
 function App() {
   const jokeElements = jokesData.map((joke) => {
@@ -52,8 +55,13 @@ function App() {
       <hr/>
       <ClickEvents/>
       <hr/>
-      <Misc/>
+      <Things/>
       <NonUI/>
+      <hr/>
+      <Counter/>
+      <GoingOut/>
+      <hr/>
+      <PersonCard/>
     </div>
   );
 }
