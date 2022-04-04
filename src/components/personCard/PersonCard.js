@@ -1,4 +1,5 @@
 import React from "react"
+import Star from "./Star"
 
 export default function PersonCard() {
     const [contact, setContact] = React.useState({
@@ -11,8 +12,6 @@ export default function PersonCard() {
     })
     // empty star: https://www.kindpng.com/picc/m/131-1313967_star-symbol-text-transparent-background-star-icon-hd.png
     // filled star: https://cdn3.vectorstock.com/i/1000x1000/31/77/star-icon-isolated-on-background-modern-simple-sp-vector-21073177.jpg
-    
-    let starIcon = contact.isFavorite ? "https://cdn3.vectorstock.com/i/1000x1000/31/77/star-icon-isolated-on-background-modern-simple-sp-vector-21073177.jpg" : "https://www.kindpng.com/picc/m/131-1313967_star-symbol-text-transparent-background-star-icon-hd.png"
     
     function toggleFavorite() {
         setContact(prevContact => {
@@ -28,11 +27,9 @@ export default function PersonCard() {
             <article className="card">
                 <img src={contact.img} className="card--image" />
                 <div className="card--info">
-                    <img 
-                        src={starIcon} 
-                        className="card--favorite"
-                        onClick={toggleFavorite}
-                    />
+                    <Star
+                    isFilled = {contact.isFavorite}
+                    handleClick = {toggleFavorite}/>
                     <h2 className="card--name">
                         {`${contact.firstName} ${contact.lastName}`}
                     </h2>
